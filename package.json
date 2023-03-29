@@ -41,7 +41,6 @@
   "dependencies": {
     "@loopback/authorization": "^0.12.8",
     "@loopback/security": "^0.8.7",
-    "@nexbus/common": "*",
     "@types/bcryptjs": "2.4.2",
     "axios": "^1.3.4",
     "bcryptjs": "^2.4.3",
@@ -67,8 +66,5 @@
     "@types/lodash": "^4.14.191",
     "@types/node": "^14.18.36",
     "typescript": "~4.9.4"
-  },
-  "publishConfig": {
-    "registry": "https://reg.nexpando.com"
   }
 }

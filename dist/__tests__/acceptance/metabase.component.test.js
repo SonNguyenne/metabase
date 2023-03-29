@@ -56,7 +56,7 @@ describe("metabase", () => {
         ]);
     });
     async function givenRunningApplication() {
-        app = new application_1.TestApplication({
+        app = new application_1.MetabaseApplication({
             rest: { ...(0, testlab_1.givenHttpServerConfig)(), port: 3002 },
         });
         await app.boot();

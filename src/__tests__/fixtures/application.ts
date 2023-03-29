@@ -11,11 +11,11 @@ import {ServiceMixin} from '@loopback/service-proxy';
 import path from 'path';
 import {MySequence} from './sequence';
 import {MetabaseService} from '../../services/metabase.service';
-import {TestComponent} from '../../test.component';
+import {MetabaseComponent} from '../../metabase.component';
 import {MetabaseServiceBindings} from '../../keys';
 require('dotenv').config();
 
-export class TestApplication extends BootMixin(
+export class MetabaseApplication extends BootMixin(
   ServiceMixin(RepositoryMixin(RestApplication)),
 ) {
   constructor(options: ApplicationConfig = {}) {
@@ -28,7 +28,7 @@ export class TestApplication extends BootMixin(
     this.static('/', path.join(__dirname, '../public'));
 
     // - enable jwt auth -
-    this.component(TestComponent);
+    this.component(MetabaseComponent);
     // Mount authentication system
     this.bind(MetabaseServiceBindings.METABASE).toClass(MetabaseService);
     this.bind(MetabaseServiceBindings.METABASE_URL).to(

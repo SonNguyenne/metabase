@@ -7,10 +7,10 @@ import {
 } from "@loopback/testlab";
 import { MetabaseServiceBindings } from "../../keys";
 import { MetabaseService } from "../../services/metabase.service";
-import { TestApplication } from "../fixtures/application";
+import { MetabaseApplication } from "../fixtures/application";
 
 describe("metabase", () => {
-  let app: TestApplication;
+  let app: MetabaseApplication;
   let client: Client;
   let metabaseService: MetabaseService;
   before(givenRunningApplication);
@@ -64,7 +64,7 @@ describe("metabase", () => {
   });
 
   async function givenRunningApplication() {
-    app = new TestApplication({
+    app = new MetabaseApplication({
       rest: { ...givenHttpServerConfig(), port: 3002 },
     });
 

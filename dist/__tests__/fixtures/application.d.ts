@@ -1,6 +1,6 @@
 import { ApplicationConfig } from '@loopback/core';
 import { RestApplication } from '@loopback/rest';
-declare const TestApplication_base: (new (...args: any[]) => {
+declare const MetabaseApplication_base: (new (...args: any[]) => {
     projectRoot: string;
     bootOptions?: import("@loopback/boot").BootOptions | undefined;
     booted: boolean;
@@ -266,7 +266,7 @@ declare const TestApplication_base: (new (...args: any[]) => {
     prependOnceListener: (event: string | symbol, listener: (...args: any[]) => void) => import("@loopback/core").Application;
     eventNames: () => (string | symbol)[];
 }) & typeof RestApplication;
-export declare class TestApplication extends TestApplication_base {
+export declare class MetabaseApplication extends MetabaseApplication_base {
     constructor(options?: ApplicationConfig);
 }
 export {};

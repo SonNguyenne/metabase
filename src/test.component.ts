@@ -11,7 +11,6 @@ import { MetabaseService } from "./services/metabase.service";
 export class TestComponent implements Component {
   bindings = [
     Binding.bind(MetabaseServiceBindings.METABASE).toClass(MetabaseService),
-    Binding.bind(MetabaseServiceBindings.METABASE).toClass(MetabaseService),
     Binding.bind(MetabaseServiceBindings.METABASE_URL).to(
       "http://localhost:3000/api"
     ),

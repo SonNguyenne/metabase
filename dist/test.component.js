@@ -7,7 +7,12 @@ const keys_1 = require("./keys");
 const metabase_service_1 = require("./services/metabase.service");
 let TestComponent = class TestComponent {
     constructor(app) {
-        this.bindings = [core_1.Binding.bind(keys_1.MetabaseServiceBindings.METABASE).toClass(metabase_service_1.MetabaseService)];
+        this.bindings = [
+            core_1.Binding.bind(keys_1.MetabaseServiceBindings.METABASE).toClass(metabase_service_1.MetabaseService),
+            core_1.Binding.bind(keys_1.MetabaseServiceBindings.METABASE_URL).to("http://localhost:3000/api"),
+            core_1.Binding.bind(keys_1.MetabaseServiceBindings.METABASE_USERNAME).to(process.env.USERNAME_MB),
+            core_1.Binding.bind(keys_1.MetabaseServiceBindings.METABASE_PASSWORD).to(process.env.PASSWORD_MB),
+        ];
     }
 };
 TestComponent = tslib_1.__decorate([

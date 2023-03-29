@@ -11,7 +11,7 @@ import {ServiceMixin} from '@loopback/service-proxy';
 import path from 'path';
 import {MySequence} from './sequence';
 import {MetabaseService} from '../../services/metabase.service';
-import {MetabaseComponent} from '../../metabase.component';
+import {AnalysisComponent} from '../../analysis.component';
 import {MetabaseServiceBindings} from '../../keys';
 require('dotenv').config();
 
@@ -28,7 +28,7 @@ export class MetabaseApplication extends BootMixin(
     this.static('/', path.join(__dirname, '../public'));
 
     // - enable jwt auth -
-    this.component(MetabaseComponent);
+    this.component(AnalysisComponent);
     // Mount authentication system
     this.bind(MetabaseServiceBindings.METABASE).toClass(MetabaseService);
     this.bind(MetabaseServiceBindings.METABASE_URL).to(

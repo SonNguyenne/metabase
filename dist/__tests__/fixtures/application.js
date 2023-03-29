@@ -14,7 +14,7 @@ const service_proxy_1 = require("@loopback/service-proxy");
 const path_1 = tslib_1.__importDefault(require("path"));
 const sequence_1 = require("./sequence");
 const metabase_service_1 = require("../../services/metabase.service");
-const metabase_component_1 = require("../../metabase.component");
+const analysis_component_1 = require("../../analysis.component");
 const keys_1 = require("../../keys");
 require('dotenv').config();
 class MetabaseApplication extends (0, boot_1.BootMixin)((0, service_proxy_1.ServiceMixin)((0, repository_1.RepositoryMixin)(rest_1.RestApplication))) {
@@ -25,7 +25,7 @@ class MetabaseApplication extends (0, boot_1.BootMixin)((0, service_proxy_1.Serv
         // Set up default home page
         this.static('/', path_1.default.join(__dirname, '../public'));
         // - enable jwt auth -
-        this.component(metabase_component_1.MetabaseComponent);
+        this.component(analysis_component_1.AnalysisComponent);
         // Mount authentication system
         this.bind(keys_1.MetabaseServiceBindings.METABASE).toClass(metabase_service_1.MetabaseService);
         this.bind(keys_1.MetabaseServiceBindings.METABASE_URL).to('http://localhost:3000/api');

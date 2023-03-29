@@ -8,7 +8,7 @@ import {
 import { MetabaseServiceBindings } from "./keys";
 import { MetabaseService } from "./services/metabase.service";
 
-export class MetabaseComponent implements Component {
+export class AnalysisComponent implements Component {
   bindings = [
     Binding.bind(MetabaseServiceBindings.METABASE).toClass(MetabaseService)
   ];

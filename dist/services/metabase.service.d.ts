@@ -12,7 +12,6 @@ export declare class MetabaseService {
         data: any;
     };
     formatTrend(data: any): any;
-    test(): number;
     getDataByGranularity(session: any, filter: any, granularity: any, id: number): Promise<any>;
     getDataByQuery(session: any, parameters: any, id: number): Promise<any>;
 }

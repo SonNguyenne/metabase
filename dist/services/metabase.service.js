@@ -88,9 +88,6 @@ let MetabaseService = class MetabaseService {
         });
         return result;
     }
-    test() {
-        return 1;
-    }
     async getDataByGranularity(session, filter, granularity, id) {
         const cardDetails = await axios_1.default.get(`${this.metabaseUrl}/card/${id}`, {
             headers: {

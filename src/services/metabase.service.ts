@@ -104,10 +104,6 @@ export class MetabaseService {
     return result;
   }
 
-  test() {
-    return 1;
-  }
-
   async getDataByGranularity(
     session: any,
     filter: any,
